@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3.5rem;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    font-weight: 800;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.time-container {
+    width: 700px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 10px;
+}
+
+.country-name {
+    display: flex;
+    grid-column: 1/ -1;
+    width: 100%;
+    height: fit-content;
+    padding: .5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    justify-content: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.clock {
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.hour-hand,
+.min-hand {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 48%;
+    left: 50%;
+    height: 2px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.hour-hand {
+    width: 30%;
+    transform-origin: center left;
+    transform: rotate(180deg);
+}
+
+.min-hand {
+    width: 40%;
+    transform-origin: center left;
+    transform: rotate(50deg);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.format-changer {
+    width: fit-content;
+    padding: .4rem .5rem;
+    margin-bottom: 1rem;
+    background-color: #31C48D;
+    border: none;
+    font-weight: 540;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.format-changer:hover {
+    background-color: #2cbd88;
+}
+
+@media (max-width : 540px) {
+    .main-container {
+        padding: .5rem !important;
+    }
+
+    .clock {
+        width: 50% !important;
+    }
+
+    .details {
+        padding: .5rem !important;
+    }
+
+    .time-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto .5fr auto;
+    }
+}
